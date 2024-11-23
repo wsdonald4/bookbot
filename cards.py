@@ -35,29 +35,39 @@ class DeckOfCards:
             return None
         return self.__cards.pop()
     
-    def deal_four(self):
-        for i in range(10):
+    def deal_two(self):
+        for i in range(2):
             print(self.deal_card())
 
     def remaining_cards(self):
         return self.__cards
     
+    def deal_three(self):
+        for i in range(3):
+            print(self.deal_card())
+    
 def main():
     player1 = DeckOfCards()
     player2 = player1
     player3 = player1
+    river = player1
     player1.shuffle_deck()
     print("player 1's cards")
-    player1.deal_four()
-    print(len(player1.remaining_cards()))
+    player1.deal_two()
+    
     print()
     print("player 2's cards")
-    player2.deal_four()
-    print(len(player2.remaining_cards()))
+    player2.deal_two()
+    
     print()
     print("player 3's cards")
-    player3.deal_four()
-    print(len(player3.remaining_cards()))
+    player3.deal_two()
+    
+    print()
+    river.deal_three()
+    print(river.deal_card())
+    print(river.deal_card())
+
     
     
 main()
